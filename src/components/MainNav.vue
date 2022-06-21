@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  export default {
-    name: "Mina Nav",
-  };
+export default {
+  name: "MainNav",
+};
 </script>
