@@ -4,7 +4,8 @@
       <div
         class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1"
       >
-        <a href="/" class="flex items-center h-full text-xl">Sira Afalagi</a>
+        <a href="/" class="flex items-center h-full text-xl">{{company}}</a>
+        <h2 class="flex items-center h-full ml-8">Developed by: {{author.firstName}} {{author.lastNamne}}</h2>
       </div>
     </div>
   </header>
@@ -13,5 +14,14 @@
 <script>
 export default {
   name: "MainNav",
+  data(){
+    return{
+      company: "Sira Felagi",
+      author: {
+        firstName: "Dawit",
+        lastNamne: "Endaylalu",
+      }
+    }
+  }
 };
 </script>
