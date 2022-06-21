@@ -12,5 +12,5 @@ export const multiply = (num1, num2) => {
   //   total += num2
   // }
   // return total
-  num1 * num2
+  return num1 * num2
 }
