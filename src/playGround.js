@@ -1,16 +1,16 @@
-const fruits = ["apple", "banana", "orange"];
-const veggies = ["cucumber", "radish", "carrot"];
-
-// console.log([...fruits, ...veggies]);
-
-const developer = {
-  salary: 100000,
-  experience: 4.5, 
-  techStack: ["Vue", "HTML", "CSS"],
-  doubleSalary(){
-    this.salary = this.salary * 2;
+export const evenOrOdd = (number) => {
+  if(number % 2 === 0){
+    return "Even"
+  }else{
+    return "Odd"
   }
-};
+}
 
-developer.doubleSalary()
-console.log(developer.salary)
+export const multiply = (num1, num2) => {
+  // let total = 0
+  // for(let i = 0; i < num1; i++){
+  //   total += num2
+  // }
+  // return total
+  num1 * num2
+}
