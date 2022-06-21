@@ -1,6 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="I am learning Vue and it's going great" />
+  <h1>Hello, I am in App.vue</h1>
+  <HelloWorld msg="Hello World!" />
 </template>
 
 <script>
