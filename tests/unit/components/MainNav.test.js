@@ -1,5 +1,6 @@
 import { mount } from "@vue/test-utils";
 import MainNav from "@/components/MainNav.vue";
+import { data } from "autoprefixer";
 
 describe("MainNav", () => {
   it("displays company name", () => {
@@ -19,4 +20,34 @@ describe("MainNav", () => {
       "Jobs",
     ]);
   });
+  describe("when the user logged out", () =>{
+    it("prompts user to sign in", () =>{
+      const wrapper = mount(MainNav, {
+        data() {
+          return {
+            isLoggedIn:false,
+          }
+        }
+      })
+      const loginButton = wrapper.find("[data-test='login-button']")
+      const ProfileImage = wrapper.find("[data-test='profile-image']")
+      expect(loginButton.exists()).toBe(true)
+      expect(ProfileImage.exists()).toBe(false)
+    })
+  })
+  describe("when the user logs in", () => {
+    it("displays user profile picture", () => {
+      const wrapper = mount(MainNav, {
+        data() {
+          return {
+            isLoggedIn:true,
+          }
+        }
+      })
+      const loginButton = wrapper.find("[data-test='login-button']")
+      const ProfileImage = wrapper.find("[data-test='profile-image']")
+      expect(loginButton.exists()).toBe(false)
+      expect(ProfileImage.exists()).toBe(true)
+    })
+  })
 });
