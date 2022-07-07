@@ -1,6 +1,8 @@
-const nums = [1, 2, 3, 4, 5];
-const sqaures = nums.map((num) => {
-  return num * num;
-});
+const favFood = "Sushi"
 
-console.log(sqaures);
+const goodFoods = {
+  favFood,
+  [favFood]: true
+}
+
+console.log(goodFoods)

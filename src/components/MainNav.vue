@@ -22,10 +22,17 @@
           </ul>
         </nav>
         <div class="flex items-center h-full ml-auto">
-          <profile-image v-if="isLoggedIn" data-test="profile-image"/>
-          <action-button v-else text="Sign In" data-test="profile-image" v-on:click="loginUser"/>
+          <profile-image v-if="isLoggedIn" data-test="profile-image" />
+          <action-button
+            v-else
+            text="Sign In"
+            data-test="profile-image"
+            v-on:click="loginUser"
+          />
         </div>
       </div>
+    <subnav />
+    
     </div>
   </header>
 </template>
@@ -33,13 +40,13 @@
 <script>
 import ActionButton from "@/components/ActionButton.vue";
 import ProfileImage from "@/components/ProfileImage.vue";
-
-
+import Subnav from "@/components/Subnav.vue";
 export default {
   name: "MainNav",
   components: {
     ActionButton,
-    ProfileImage
+    ProfileImage,
+    Subnav,
   },
   data() {
     return {
@@ -58,8 +65,8 @@ export default {
   },
   methods: {
     loginUser() {
-      this.isLoggedIn = true
-    }
-  }
+      this.isLoggedIn = true;
+    },
+  },
 };
 </script>
