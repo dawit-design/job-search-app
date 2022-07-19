@@ -26,12 +26,12 @@
           <action-button
             v-else
             text="Sign In"
-            data-test="profile-image"
+            data-test="login-button"
             v-on:click="loginUser"
           />
         </div>
       </div>
-    <subnav />
+    <subnav v-if:="isLoggedIn" data-test="subnav"/>
     
     </div>
   </header>
