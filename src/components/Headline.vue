@@ -1,6 +1,9 @@
 <template>
   <section>
-    <h1>{{action}} For Everyone</h1>
+    <h1>
+      <span :class="actionsClasses">{{action}}</span>
+      <br/>
+      For Everyone</h1>
     <h2>Find your next job at sira ferlagi!</h2>
   </section>
 </template>
@@ -20,6 +23,16 @@
     beforeUnmount () {
       clearInterval(this.interval)
     },
+    computed: {
+      actionsClasses(){
+        return {
+          build: this.action === "Build",
+          create: this.action === "Create",
+          design: this.action === "Design",
+          code : this.action === "Code",
+        }
+      }
+    },
     methods: {
       changeTitle() {
         this.interval = setInterval(() => {
@@ -33,3 +46,18 @@
     }
   }
 </script>
+
+<style scoped>
+.build {
+  color: #1a73e8;
+}
+.create {
+  color: #34a853;
+}
+.design {
+  color:#f9ab00
+}
+.code {
+  color: #d93025;
+}
+</style>
