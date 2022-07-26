@@ -1,3 +1,4 @@
+import { nextTick } from "vue";
 import { mount } from "@vue/test-utils";
 
 import Headline from "@/components/Headline.vue";
@@ -17,5 +18,16 @@ describe("Headline", () => {
     mount(Headline)
     expect(setInterval).toHaveBeenCalled()
     jest.useRealTimers();
+  })
+
+  it("swaps action verb after first interval", async () => {
+    jest.useRealTimers("legacy")
+    const wrapper = mount(Headline)
+    jest.runOnlyPendingTimers();
+    console.log(wrapper.vm.action)
+    await nextTick();
+    const actionPhrase = wrapper.find("[data-test='action-phrase']");
+    expect(actionPhrase.text()).toBe("Create for everyone");
+    jest.useRealTimers()
   })
 });
