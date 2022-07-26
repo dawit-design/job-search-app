@@ -12,22 +12,30 @@ describe("Headline", () => {
 
     jest.useRealTimers();
   });
-  
+
   it("changes action verb at a consistent interval", () => {
     jest.useFakeTimers("legacy");
-    mount(Headline)
-    expect(setInterval).toHaveBeenCalled()
+    mount(Headline);
+    expect(setInterval).toHaveBeenCalled();
     jest.useRealTimers();
-  })
+  });
 
   it("swaps action verb after first interval", async () => {
-    jest.useRealTimers("legacy")
-    const wrapper = mount(Headline)
+    jest.useRealTimers("legacy");
+    const wrapper = mount(Headline);
     jest.runOnlyPendingTimers();
-    console.log(wrapper.vm.action)
+    console.log(wrapper.vm.action);
     await nextTick();
     const actionPhrase = wrapper.find("[data-test='action-phrase']");
     expect(actionPhrase.text()).toBe("Create for everyone");
-    jest.useRealTimers()
-  })
+    jest.useRealTimers();
+  });
+
+  it("removes interval when component disappears", () => {
+    jest.useRealTimers();
+    const wrapper = mount(Headline);
+    wrapper.unmount();
+    expect(clearInterval).toHaveBeenCalled();
+    jest.useRealTimers();
+  });
 });
