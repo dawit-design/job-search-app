@@ -1,9 +1,9 @@
 <template>
   <section>
-    <h1 class="font-bold tracking-tighter text-8xl mb-14">
+    <h1 class="font-bold tracking-tighter text-8xl mb-14" data-test="action-phrase">
       <span :class="actionsClasses">{{action}}</span>
       <br/>
-      For Everyone</h1>
+      for everyone</h1>
     <h2 class="text-3xl font-light">Find your next job at sira ferlagi!</h2>
   </section>
 </template>
