@@ -11,6 +11,7 @@
           :value="role"
           placeholder="Software Engineer"
           class="w-full text-lg font-normal focus:outline-none"
+          v-on:input="updateRole"
         />
       </div>
       <span
@@ -28,6 +29,7 @@
           :value="location"
           placeholder="New York City"
           class="w-full text-lg font-normal focus:outline-none"
+          v-on:input="updateLocation"
         />
       </div>
     </div>
@@ -48,7 +50,15 @@ export default {
       role: "",
       location: "",
     }
-  }
+  },
+  methods: {
+    updateRole(event) {
+      this.role = event.target.value
+    },
+    updateLocation(event) {
+      this.location = event.target.value
+    },
+  },
 };
 </script>
 
