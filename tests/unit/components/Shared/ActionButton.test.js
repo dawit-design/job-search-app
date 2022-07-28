@@ -1,25 +1,25 @@
-import {mount} from "@vue/test-utils"
+import { mount } from "@vue/test-utils";
 
-import ActionButton from "@/components/Shared/ActionButton"
+import ActionButton from "@/components/Shared/ActionButton";
 
 describe("Action", () => {
   it("render text", () => {
-    const wrapper =mount(ActionButton, {
+    const wrapper = mount(ActionButton, {
       props: {
         text: "Clickable",
-        type: "primary"
-      }
-    })
-    expect(wrapper.text()).toMatch("Clickable")
-  })
+        type: "primary",
+      },
+    });
+    expect(wrapper.text()).toMatch("Clickable");
+  });
   it("applies one of several styles to button", () => {
     const wrapper = mount(ActionButton, {
       props: {
         text: "Clickable",
-        type: "primary"
-      }
-    })
-    const button = wrapper.find("button")
-    expect(button.classes("primary")).toBe(true)
-  })
-})
+        type: "primary",
+      },
+    });
+    const button = wrapper.find("button");
+    expect(button.classes("primary")).toBe(true);
+  });
+});

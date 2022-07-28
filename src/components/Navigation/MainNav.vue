@@ -1,5 +1,5 @@
 <template>
-  <header v-bind:class="['w-full' , 'text-sm', headerHeightClass]">
+  <header v-bind:class="['w-full', 'text-sm', headerHeightClass]">
     <div class="fixed top-0 left-0 w-full h-16 bg-white">
       <div
         class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1"
@@ -31,8 +31,7 @@
           />
         </div>
       </div>
-    <subnav v-if:="isLoggedIn" data-test="subnav"/>
-    
+      <subnav v-if:="isLoggedIn" data-test="subnav" />
     </div>
   </header>
 </template>
@@ -63,13 +62,13 @@ export default {
       isLoggedIn: false,
     };
   },
-  computed:{
-    headerHeightClass(){
+  computed: {
+    headerHeightClass() {
       return {
         "h-16": !this.isLoggedIn,
         "h-32": this.isLoggedIn,
-      }
-    }
+      };
+    },
   },
   methods: {
     loginUser() {

@@ -11,15 +11,10 @@
           type="text"
           placeholder="Software Engineer"
           class="w-full text-lg font-normal focus:outline-none"
-          
         />
       </div>
       <span
-        class="
-        flex items-center 
-        h-full px-3 
-        border-l border-r border-brand-gray-3 
-        bg-brand-gray-2"
+        class="flex items-center h-full px-3 border-l border-r border-brand-gray-3 bg-brand-gray-2"
         >In</span
       >
       <div class="relative flex items-center flex-1 h-full pl-3">
@@ -32,23 +27,22 @@
         />
       </div>
     </div>
-    <action-button text="Search" type="secondary" class="rounded-r-3xl"/>
+    <action-button text="Search" type="secondary" class="rounded-r-3xl" />
   </form>
-
 </template>
 
 <script>
-import ActionButton from "@/components/Shared/ActionButton.vue"
+import ActionButton from "@/components/Shared/ActionButton.vue";
 export default {
   name: "JobSearchForm",
   components: {
     ActionButton,
   },
-  data () {
+  data() {
     return {
       role: "",
       location: "",
-    }
+    };
   },
 };
 </script>
