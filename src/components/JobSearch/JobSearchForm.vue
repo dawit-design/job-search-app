@@ -14,7 +14,7 @@
       >
       <div class="relative flex items-center flex-1 h-full pl-3">
         <label class="absolute left-0 -top-10">Where?</label>
-        <text-input placeholder="New York City"/>
+        <text-input placeholder="New York City" @handleInput= "updateLocation"/>
       </div>
     </div>
     <action-button text="Search" type="secondary" class="rounded-r-3xl" />
@@ -38,8 +38,11 @@ export default {
   },
   methods: {
     updateRole(payload) {
-      console.log(payload);
+      this.role = payload;
     },
+    updateLocation(payload) {
+      this.location = payload;
+    }
   },
 };
 </script>
