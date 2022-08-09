@@ -22,6 +22,7 @@
       required: true,
     }
   },
+  emits: ["update:modalValue"],
   methods: {
     handleInput($event) {
       this.$emit("update:modelValue", $event.target.value);
