@@ -1,5 +1,6 @@
 <template>
-  <img v-bind:src="ImageSrc" alt="" 
+  <img
+:src="ImageSrc" alt="" 
   class="w-10 h-10 object-contain rounded-3xl">
 </template>
 

@@ -23,18 +23,18 @@ export default {
       interval: null,
     };
   },
-  created() {
-    this.changeTitle();
-  },
-  beforeUnmount() {
-    clearInterval(this.interval);
-  },
   computed: {
     actionsClasses() {
       return {
         [this.action.toLowerCase()]: true,
       };
     },
+  },
+  created() {
+    this.changeTitle();
+  },
+  beforeUnmount() {
+    clearInterval(this.interval);
   },
   methods: {
     changeTitle() {

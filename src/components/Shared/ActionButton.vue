@@ -1,6 +1,6 @@
 <template>
   <button
-    v-bind:class="buttonClass">
+    :class="buttonClass">
     {{text}}
   </button>
 </template>

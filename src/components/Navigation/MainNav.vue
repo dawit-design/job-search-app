@@ -1,18 +1,18 @@
 <template>
-  <header v-bind:class="['w-full', 'text-sm', headerHeightClass]">
+  <header :class="['w-full', 'text-sm', headerHeightClass]">
     <div class="fixed top-0 left-0 w-full h-16 bg-white">
       <div
         class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1"
       >
-        <a v-bind:href="url" class="flex items-center h-full text-xl">{{
+        <a :href="url" class="flex items-center h-full text-xl">{{
           company
         }}</a>
         <nav class="h-full ml-12">
           <ul class="flex h-full p-0 m-0 list-none">
             <li
-              class="h-full ml-9 first:ml-0"
               v-for="menuItem in menuItems"
-              v-bind:key="menuItem"
+              :key="menuItem"
+              class="h-full ml-9 first:ml-0"
               data-test="main-nav-list-item"
             >
               <a href="" class="flex items-center h-full py-2.5">{{
@@ -27,7 +27,7 @@
             v-else
             text="Sign In"
             data-test="login-button"
-            v-on:click="loginUser"
+            @click="loginUser"
           />
         </div>
       </div>
