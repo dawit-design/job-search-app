@@ -10,7 +10,7 @@ export default {
   name: "JobResultsView",
   methods: {
     goToHome() {
-      this.$router.push("/")
+      this.$router.push({name:"Home"})
     }
   }
 }
